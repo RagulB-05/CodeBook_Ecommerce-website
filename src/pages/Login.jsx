@@ -28,8 +28,10 @@ const Login = ({ title }) => {
   const handleLoginGuest = async (e) => {
     e.preventDefault();
     const authDetail = {
-      email: (email.current.value = "ragul@example.com"),
-      password: (password.current.value = "LearnReact"),
+      email: (email.current.value =
+        import.meta.env.VITE_BASE_GUEST_USER_ACCOUNT),
+      password: (password.current.value =
+        import.meta.env.VITE_BASE_GUEST_USER_PASSWORD),
     };
     try {
       const data = await login(authDetail);
