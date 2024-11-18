@@ -27,11 +27,11 @@ const Login = ({ title }) => {
 
   const handleLoginGuest = async (e) => {
     e.preventDefault();
+    const guestAccount = import.meta.env.VITE_BASE_GUEST_LOGIN;
+    const guestPassword = import.meta.env.VITE_BASE_GUEST_PASSWORD;
     const authDetail = {
-      email: (email.current.value =
-        import.meta.env.VITE_BASE_GUEST_USER_ACCOUNT),
-      password: (password.current.value =
-        import.meta.env.VITE_BASE_GUEST_USER_PASSWORD),
+      email: (email.current.value = guestAccount),
+      password: (password.current.value = guestPassword),
     };
     try {
       const data = await login(authDetail);
